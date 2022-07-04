@@ -1,0 +1,43 @@
+.container{
+    @extend %container;
+}
+
+.clients__header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.clients__list {
+    @extend %list;
+    display: flex;
+}
+
+.clients__link {
+    @extend %link;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid $clients-color;
+    border-radius: 4px;
+    color: $clients-color;
+    transition: color 250ms $timing-function,
+        border-color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+        border-color: $active-link-hover-color;
+    }
+}
+
+.clients__item + .clients__item {
+    margin-left: 30px;
+}
+
+.clients__icon {
+    width: 106px;
+    height: 60px;
+    fill: currentColor;
+}

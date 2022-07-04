@@ -1,0 +1,111 @@
+.header__portfolio {   
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid $border-header-color;
+}
+
+.header__container{
+    @extend %container;
+
+}
+
+.navigate__list {
+    @extend %list;
+    display: flex;
+}
+
+.navigate__link {
+    @extend %link;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: $main-text-color;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+    }
+}
+
+.navigate__item {
+    position: relative;
+
+    &+& {
+        margin-left: 50px;
+    }
+}
+
+/*Активная вкладка*/
+.navigate__link--active {
+    @extend %link;
+    position: relative;
+    color: $active-link-hover-color;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $active-link-hover-color;
+    }
+}
+
+/*E-mail и телефон*/
+.contacts {
+    display: flex;
+    margin-left: auto;
+}
+
+.contacts__item {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    &+& {
+        margin-left: 50px;
+    }
+}
+
+%contacts-link {
+    @extend %link;
+    display: flex;
+    align-items: center;
+    color: $second-text-color;
+    font-weight: 500;
+    transition: color 250ms $timing-function;
+}
+
+.contacts__item--mail {
+    @extend %contacts-link;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+    }
+}
+
+.contacts__item--tel {
+    @extend %contacts-link;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+    }
+}
+
+.contacts__item--icon {
+    fill: currentColor;
+    margin-right: 10px;
+
+    &:hover,
+    &:focus {
+        fill: $active-link-hover-color;
+    }
+}
