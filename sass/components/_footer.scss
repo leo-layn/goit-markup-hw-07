@@ -29,17 +29,7 @@ footer {
     @extend %list;
 }
 
-.address__link--locate {
-    color: $main-bg-color;
-    line-height: 1.71;
-
-    &:hover,
-    &:focus {
-        color: $active-link-hover-color;
-    }
-}
-
-.address__link {
+%address-link {
     @extend %link;
     color: $footer-contacts-color;
     line-height: 1.71;
@@ -51,6 +41,26 @@ footer {
     }
 }
 
+.address__link--mail,
+.address__link--tel{
+    @extend %address-link;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+    }
+}
+
+.address__link--locate {
+    @extend %address-link;
+    color: $main-bg-color;
+    line-height: 1.71;
+
+    &:hover,
+    &:focus {
+        color: $active-link-hover-color;
+    }
+}
 .address__item + .address__item {
     margin-top: 9px;
 }

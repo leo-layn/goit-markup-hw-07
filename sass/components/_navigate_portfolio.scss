@@ -34,7 +34,7 @@
 
     transition: background-color 250ms $timing-function,
         color 250ms $timing-function,
-        box-shadow 250ms var$timing-function;
+        box-shadow 250ms $timing-function;
 
     &:hover,
     &:focus {
